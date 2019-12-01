@@ -1,0 +1,463 @@
+/* SCSS Variables */
+/* Style Guide - Grapefruit Swatch */
+$yuri-grapefruit: #C73738;
+$yuri-pink: #D79DB8;
+$yuri-brown: #592316;
+$yuri-red: #8C0303;
+$yuri-black: #0D0D0D;
+$yuri-white: #F4F4F4;
+
+$portfolio-spacing: 25px;
+
+$hamburger-layer-color: $yuri-white;
+
+/* Imports */
+@import "node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
+
+/* Yuri's Portfolio Styles */
+*,
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+::placeholder {
+    color: $yuri-white;
+}
+
+/* Block Level */
+html {
+    font-size: 62.5%; // Setting this to 62.5% for easy rem conversion.
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1.6rem; // Setting this to 62.5% for easy rem conversion.
+    font-family: 'Poppins', sans-serif;
+    background-color: $yuri-black;
+    color: $yuri-white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+a {
+    color: $yuri-white;
+    text-decoration: none;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+/* Header */
+header {
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    padding: 10px;
+
+    .hamburger {
+
+        &:not(.is-active) {
+
+            .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+                box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}
+
+/* Main Navigation */
+nav {
+
+    &.main-nav {
+        position: fixed;
+        z-index: 1000;
+        height: 500px;
+        padding: $portfolio-spacing;
+        top: 0;
+        left: 0;
+        background-color: rgba(89, 35, 22, 0.9);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+        transform: translateX(-100%);
+        opacity: 0;
+
+        -webkit-transition: all .4s ease-in-out;
+        -moz-transition: all .4s ease-in-out;
+        -ms-transition: all .4s ease-in-out;
+        -o-transition: all .4s ease-in-out;
+        transition: all .4s ease-in-out;
+
+        &.opened {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        ul {
+
+            &.main-nav-list {
+                padding-top: 75px;
+                list-style-type: none;
+                text-transform: uppercase;
+                font-size: 28px;
+                font-weight: 300;
+                font-family: 'Raleway', sans-serif;
+
+                li {
+                    margin-bottom: 15px;
+
+                    &:last-child {
+                        margin: 0;
+                    }
+
+                    a {
+                        text-decoration: none;
+
+                        &:hover {
+                            color: $yuri-pink;
+                        }
+                    }
+                }
+            }
+        }
+
+        .contact-info {
+            position: absolute;
+            right: $portfolio-spacing;
+            bottom: $portfolio-spacing;
+            left: $portfolio-spacing;
+            padding: 15px;
+            background-color: $yuri-white;
+            box-shadow: 0 4px 3px -3px rgba(0, 0, 0, 0.75);
+
+            p {
+                font-size: 1.4rem;
+                color: $yuri-black;
+                line-height: 2.4rem;
+
+                a {
+                    color: $yuri-black;
+
+                    &:hover {
+                        color: $yuri-grapefruit;
+                    }
+                }
+            }
+
+            .social-icon {
+                display: inline-block;
+                margin: 5px 15px 0 0;
+                font-size: 2rem;
+
+                &:last-child {
+                    margin: 5px 0 0;
+                }
+            }
+        }
+    }
+}
+
+.back-to-top {
+    position: fixed;
+    z-index: 3000;
+    right: $portfolio-spacing;
+    bottom: $portfolio-spacing;
+    font-size: 2rem;
+
+    a {
+        display: block;
+        padding: 10px;
+        background-color: $yuri-brown;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: $yuri-grapefruit;
+        }
+
+        .fa {
+            display: block;
+        }
+    }
+}
+
+/* Main Content */
+main {
+
+    section {
+
+        &.hero-section {
+            height: 400px;
+            padding: $portfolio-spacing;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background-color: $yuri-grapefruit;
+
+            h1 {
+                font-weight: 300;
+                font-size: 30px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+            }
+        }
+
+        &.about-section {
+            display: flex;
+            flex-wrap: wrap;
+            padding: $portfolio-spacing;
+            background-color: $yuri-black;
+
+            h2 {
+                margin: 0 0 $portfolio-spacing;
+            }
+
+            .about-img {
+                margin-top: -125px;
+                flex-basis: 100%;
+
+                img {
+                    display: block;
+                    width: 200px;
+                    margin: 0 auto $portfolio-spacing;
+                    border-radius: 50%;
+                    border: 2px solid $yuri-grapefruit;
+                }
+            }
+
+            .about-content {
+                margin: 0 0 $portfolio-spacing;
+
+                p {
+                    font-size: 1.8rem;
+                    font-weight: 300;
+                    letter-spacing: 1px;
+                }
+            }
+
+            .skills-section {
+
+                h2 {
+                    text-align: right;
+                }
+
+                ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    list-style-type: none;
+
+                    li {
+                        padding: $portfolio-spacing;
+                        flex: 0 1 50%;
+
+                        img {
+                            display: block;
+                            width: 100%;
+                            border: 2px solid $yuri-grapefruit;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.portfolio-section {
+            background-color: $yuri-white;
+
+            .portfolio-heading {
+                padding: $portfolio-spacing;
+
+                h2 {
+                    color: $yuri-grapefruit;
+                }
+            }
+
+            ul  {
+                display: flex;
+                flex-wrap: wrap;
+
+                li {
+                    flex: 1;
+                    flex-basis: 100%;
+                    overflow: hidden;
+
+                    a {
+
+                        &:hover {
+
+                            img {
+                                -webkit-transform: scale(1.1);
+                                -ms-transform: scale(1.1);
+                                transform: scale(1.1);
+                            }
+                        }
+
+                        img {
+                            display: block;
+                            width: 100%;
+
+                            -webkit-transition: all .4s ease-in-out;
+                            -moz-transition: all .4s ease-in-out;
+                            -ms-transition: all .4s ease-in-out;
+                            -o-transition: all .4s ease-in-out;
+                            transition: all .4s ease-in-out;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.contact-form-section {
+            padding: $portfolio-spacing;
+            background-color: $yuri-black;
+
+            form {
+                max-width: 500px;
+                margin: 0 auto;
+                text-align: center;
+
+                fieldset {
+                    border: 0;
+
+                    legend {
+                        margin: 0 0 $portfolio-spacing;
+                        font-family: 'Raleway', sans-serif;
+                        font-weight: 300;
+                        font-size: 40px;
+                        text-transform: uppercase;
+                    }
+
+                    .form-field {
+                        padding: 10px;
+                        flex: 0 1 100%;
+
+                        &:last-child {
+                            margin: 0;
+                        }
+
+                        label {
+                            display: block;
+                            margin-bottom: 5px;
+                            font-family: 'Raleway', sans-serif;
+                            font-size: 1.6rem;
+                            letter-spacing: 1px;
+
+                            .red {
+                                font-family: 'Poppins', sans-serif;
+                                margin-left: 5px;
+                                color: $yuri-grapefruit;
+                            }
+                        }
+
+                        input, textarea {
+                            width: 100%;
+                            padding: 10px;
+                            color: $yuri-white;
+                            font-family: 'Poppins', sans-serif;
+                            font-size: 1.4rem;
+                            letter-spacing: 1px;
+                            background-color: $yuri-grapefruit;
+                            border: 1px solid $yuri-white;
+                        }
+
+                        textarea {
+                            height: 120px;
+                            resize: none;
+                        }
+
+                        button {
+                            cursor: pointer;
+                            width: 100%;
+                            padding: 10px;
+                            border: none;
+                            background-color: $yuri-white;
+                            font-family: 'Raleway', sans-serif;
+                            font-size: 2rem;
+                            font-weight: 400;
+
+                            -webkit-transition: all .4s ease-in-out;
+                            -moz-transition: all .4s ease-in-out;
+                            -ms-transition: all .4s ease-in-out;
+                            -o-transition: all .4s ease-in-out;
+                            transition: all .4s ease-in-out;
+
+                            &:hover {
+                                color: $yuri-white;
+                                background-color: $yuri-pink;
+                            }
+                        }
+                    }
+                }
+
+                .flex-display {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    padding: $portfolio-spacing;
+    background-color: $yuri-grapefruit;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+@media (min-width: 768px) {
+    main {
+        section {
+            &.about-section {
+                .about-content {
+                    flex: 1 1 0;
+                }
+
+                .skills-section {
+                    ul {
+                        flex-wrap: nowrap;
+
+                        li {
+                            flex: 0 1 25%;
+                        }
+                    }
+                }
+            }
+
+            &.portfolio-section {
+                ul  {
+                    li {
+                        flex-basis: 33.333%;
+                    }
+                }
+            }
+
+            &.contact-form-section {
+                form {
+                    fieldset {
+                        .form-field {
+                            &.half-width {
+                                flex: 0 1 50%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
