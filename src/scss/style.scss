@@ -238,6 +238,11 @@ main {
                     margin: 0 auto $portfolio-spacing;
                     border-radius: 50%;
                     border: 2px solid $yuri-grapefruit;
+
+                    animation-name: faceSpin;
+                    animation-duration: 10000ms;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: linear;
                 }
             }
 
@@ -269,6 +274,13 @@ main {
                         img {
                             display: block;
                             width: 100%;
+
+                            &:hover {
+                                -webkit-animation: skillBounce 1s ease;
+                                animation: skillBounce 1s ease;
+                                -webkit-animation-iteration-count: 1;
+                                animation-iteration-count: 1;
+                            }
                         }
                     }
                 }
@@ -417,6 +429,96 @@ footer {
     background-color: $yuri-grapefruit;
     font-size: 1.2rem;
     letter-spacing: 1px;
+}
+
+/* CSS Animations */
+@-webkit-keyframes skillBounce
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+       transform: translateX(-5px);
+    }
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+@keyframes skillBounce
+{
+    15%
+    {
+        -webkit-transform: translateX(5px);
+        transform: translateX(5px);
+    }
+    30%
+    {
+        -webkit-transform: translateX(-5px);
+        transform: translateX(-5px);
+    }
+    50%
+    {
+        -webkit-transform: translateX(3px);
+        transform: translateX(3px);
+    }
+    65%
+    {
+        -webkit-transform: translateX(-3px);
+        transform: translateX(-3px);
+    }
+    80%
+    {
+        -webkit-transform: translateX(2px);
+        transform: translateX(2px);
+    }
+    100%
+    {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes faceSpin {
+    from {
+        -webkit-transform:rotate(0deg);
+        transform:rotate(0deg);
+    }
+    to {
+        -webkit-transform:rotate(360deg);
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes faceSpin {
+    from {
+        -webkit-transform:rotate(0deg);
+        transform:rotate(0deg);
+    }
+    to {
+        -webkit-transform:rotate(360deg);
+        transform:rotate(360deg);
+    }
 }
 
 @media (min-width: 768px) {
