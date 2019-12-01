@@ -269,7 +269,6 @@ main {
                         img {
                             display: block;
                             width: 100%;
-                            border: 2px solid $yuri-grapefruit;
                         }
                     }
                 }
@@ -425,10 +424,12 @@ footer {
         section {
             &.about-section {
                 .about-content {
-                    flex: 1 1 0;
+                    flex: 1;
                 }
 
                 .skills-section {
+                    flex: 2;
+
                     ul {
                         flex-wrap: nowrap;
 

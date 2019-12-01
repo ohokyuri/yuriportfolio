@@ -17,5 +17,14 @@
     "node-sass": "^4.12.0"
   },
   "main": "index.js",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ohokyuri/yuriportfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ohokyuri/yuriportfolio/issues"
+  },
+  "homepage": "https://github.com/ohokyuri/yuriportfolio#readme"
 }
